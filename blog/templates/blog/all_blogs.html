@@ -1,0 +1,8 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+<h2>Total counts {{ blogs.count }} name{{ blogs.count|pluralize }}</h2>
+{% for project in blogs %}
+<a href="{% url 'project:detail' project.id %}" > <h1>{{project.title}}</h1></a>
+<h2>{{project.descriptions}}</h2>
+{% endfor %}
+{% endblock %}
